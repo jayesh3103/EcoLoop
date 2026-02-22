@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EcoLoopApp",
-    "slug": "EcoLoopApp",
+    "name": "EcoLoop",
+    "slug": "EcoLoop",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -22,6 +22,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
+      "name": "EcoLoop",
+      "shortName": "EcoLoop",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
