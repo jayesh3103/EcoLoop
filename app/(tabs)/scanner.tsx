@@ -180,10 +180,8 @@ export default function ScannerScreen() {
         type: 'image/jpeg'
       });
 
-      // 3. Send to backend (adjust IP if running on physical device vs simulator)
-      // Usually default localhost for iOS simulator, 10.0.2.2 for Android. 
-      // Using generic localhost here, which works on Mac simulators.
-      const response = await fetch('http://127.0.0.1:8000/api/scan', {
+      // 3. Send to backend (Production URL)
+      const response = await fetch('https://ecoloop-m6bz.onrender.com/api/scan', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
