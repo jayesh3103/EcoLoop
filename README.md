@@ -1,5 +1,7 @@
 # EcoLoop: NPU-Native Circular Agent
 
+**🚀 Live Demo:** [https://ecoloop-eta.vercel.app/](https://ecoloop-eta.vercel.app/)
+
 EcoLoop is an ultra-premium React Native (Expo) application designed to facilitate the circular economy within campus environments. Originally built as part of a Hackathon project, it seamlessly connects users with surplus materials to those who need them—or generates AI-driven upcycling instructions when no local match is found.
 
 ## Features
