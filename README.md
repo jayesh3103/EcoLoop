@@ -1,50 +1,82 @@
-# Welcome to your Expo app 👋
+# EcoLoop: NPU-Native Circular Agent
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+EcoLoop is an ultra-premium React Native (Expo) application designed to facilitate the circular economy within campus environments. Originally built as part of a Hackathon project, it seamlessly connects users with surplus materials to those who need them—or generates AI-driven upcycling instructions when no local match is found.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Immersive Authentic UI:** Features a high-fidelity, "Glassmorphism" aesthetic with custom font typography (Space Grotesk & Inter), deep dark themes, and dynamic neon green aurora background animations.
+- **Cross-Platform Responsive Design:** Fully responsive on both mobile iOS/Android and Web/Desktop environments. The layout dynamically constrains center content on larger laptops.
+- **Agent Initialization & Authorization:** Beautiful auth flows with delayed micro-interactions and haptic feedback.
+- **Semantic RAG Matching:** Cross-references user inventory with a local campus database to find potential component buyers (e.g., matching a discarded Stepper Motor to a Robotics Club).
+- **Automated Upcycling Generation:** If a match isn't found, the Agent suggests a comprehensive DIY upcycle manifest, projecting the theoretical CO2 offset.
+- **NPU Scanner Emulation:** A sophisticated animated camera overlay designed to emulate advanced hardware scanning and tracking systems.
 
+## Tech Stack
+
+- **Framework:** React Native / [Expo Router](https://docs.expo.dev/router/introduction/)
+- **Animations:** [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/) (physics-based spring animations, sequences, delays)
+- **Styling:** Vanilla StyleSheet + `expo-linear-gradient` + `expo-blur`
+- **Feedback:** `expo-haptics`
+- **Icons:** `@expo/vector-icons` (Ionicons)
+- **Fonts:** `@expo-google-fonts/space-grotesk`, `@expo-google-fonts/inter`
+
+## Getting Started
+
+### Prerequisites
+
+You need Node.js and npm installed on your machine.
+Ensure you have the Expo CLI installed globally, or just run using `npx`.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/EcoLoop.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd EcoLoop
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
+   _(Note: This project uses `npm` as the package manager)_
 
-2. Start the app
+### Running the App
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Start the Expo development server:
 
 ```bash
-npm run reset-project
+npx expo start --clear
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- **Press `i`** to open in an iOS Simulator.
+- **Press `a`** to open in an Android Emulator.
+- **Press `w`** to open in a web browser (fully responsive layout supported).
 
-## Learn more
+## Project Structure
 
-To learn more about developing your project with Expo, look at the following resources:
+```text
+EcoLoopApp/
+├── app/
+│   ├── _layout.tsx       # Root Navigation Layout
+│   ├── index.tsx         # Login Screen
+│   ├── signup.tsx        # Registration Screen
+│   ├── (tabs)/           # Main App Dashboard Layout
+│   │   ├── _layout.tsx   # Custom animated Tab Bar layout
+│   │   ├── index.tsx     # Activity Dashboard / Feed
+│   │   └── scanner.tsx   # Camera NPU Scanner emulation
+│   ├── match.tsx         # Target Acquired Match Screen (Modal)
+│   └── diy.tsx           # Generated DIY Guide Screen (Modal)
+├── components/           # Reusable UI components
+│   ├── CarbonCard.js
+│   ├── ScanButton.js
+│   └── MatchResult.js
+├── data.js               # Mock datasets for the RAG matching
+└── README.md
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Acknowledgments
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Built to demonstrate cutting-edge UX/UI engineering and the power of beautiful, constrained animations to reduce visual noise.
