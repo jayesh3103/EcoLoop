@@ -105,6 +105,32 @@ EcoLoop/
 └── README.md
 ```
 
+## Deployment
+
+Deploying EcoLoop requires hosting the Frontend (React Native Web) and the Backend (Python FastAPI) separately.
+
+### 1. Deploying the Backend (Render, Railway, or Heroku)
+
+**Render** is highly recommended for an easy, free FastAPI deployment:
+
+1. Create a **Web Service** on [Render.com](https://render.com) and connect this GitHub repo.
+2. Set the **Root Directory** to `backend`.
+3. Set the **Build Command** to `pip install -r requirements.txt`.
+4. Set the **Start Command** to `uvicorn main:app --host 0.0.0.0 --port $PORT`.
+5. Deploy! Render will give you a live URL (e.g., `https://ecoloop-api.onrender.com`).
+
+### 2. Deploying the Frontend (Vercel, Netlify, or GitHub Pages)
+
+_Note: Before deploying, remember to search your frontend code for `http://localhost:8000` (e.g., in your scanner component) and replace it with your newly deployed Backend URL._
+
+**Vercel** is highly recommended for Expo Web apps:
+
+1. Go to [Vercel.com](https://vercel.com) and import your GitHub repository.
+2. Set the **Framework Preset** to `Other`.
+3. Set the **Build Command** to `npx expo export -p web`.
+4. Set the **Output Directory** to `dist`.
+5. Click **Deploy**! Vercel will build the web-optimized version of the React Native app and provide you with a live URL.
+
 ## Acknowledgments
 
 Built to demonstrate cutting-edge UX/UI engineering and the power of beautiful, constrained animations to reduce visual noise.
