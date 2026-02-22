@@ -43,13 +43,38 @@ Ensure you have the Expo CLI installed globally, or just run using `npx`.
    ```
    _(Note: This project uses `npm` as the package manager)_
 
-### Running the App
+### Running the Application (Frontend & Backend)
 
-Start the Expo development server:
+#### 1. Start the Backend API
 
-```bash
-npx expo start --clear
-```
+The sophisticated NPU emulation and object scanning vectors are powered by a Python FastAPI backend.
+
+1. Open a new terminal.
+2. Navigate to the backend directory:
+   ```bash
+   cd EcoLoop/backend
+   ```
+3. Set up a virtual environment and install dependencies:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+4. Start the FastAPI server:
+   ```bash
+   uvicorn main:app --reload --host 0.0.0.0 --port 8000
+   ```
+
+#### 2. Start the Frontend App
+
+1. Open another terminal and navigate back to the root project directory:
+   ```bash
+   cd EcoLoop
+   ```
+2. Start the Expo development server:
+   ```bash
+   npx expo start --clear
+   ```
 
 - **Press `i`** to open in an iOS Simulator.
 - **Press `a`** to open in an Android Emulator.
@@ -58,7 +83,10 @@ npx expo start --clear
 ## Project Structure
 
 ```text
-EcoLoopApp/
+EcoLoop/
+├── backend/              # Python FastAPI Machine Learning backend
+│   ├── main.py           # Core API & Scanner emulation logic
+│   └── requirements.txt  # Backend dependencies
 ├── app/
 │   ├── _layout.tsx       # Root Navigation Layout
 │   ├── index.tsx         # Login Screen
